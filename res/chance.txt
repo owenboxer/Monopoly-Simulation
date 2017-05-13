@@ -1,0 +1,17 @@
+Card No.	Effect (1: Earn/Lose Money, 2: Move, 3: Go to Jail, 4: Get out of Jail Free)	Quantity/Tile No.
+2	0	//advance to Go
+2	24	//advance to Illinois Ave.
+2	11	//advance to St. Charles Place
+2	u	//advance to nearest Utility, pay 10X die roll or purchase
+2	r	//advance to nearest RR, pay 2X rent or purchase
+2	r	//advance to nearest RR, pay 2X rent or purchase
+1	50	//bank pays dividend
+4	n	//get out of jail free
+2	t	//go back three spaces
+3	n	//go to jail
+1	h25:100	//pay for repairs (25 per house, 100 per hotel)
+1	-15	//poor tax
+2	5	//take a trip to Reading RR
+2	39	//take a walk to Boardwalk
+1	p-	//elected chairman of board (pay each player 50)
+1	150	//building and loan matures

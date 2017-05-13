@@ -1,0 +1,41 @@
+Tile No.	Associated Type
+0	30	//Go
+1	0	//Mediterranean Ave
+2	29	//Community Chest
+3	1	//Baltic Ave
+4	34	//Income Tax
+5	22	//Reading RR
+6	2	//Oriental Ave
+7	28	//Chance
+8	3	//Vermont
+9	4	//Connecticut
+10	31	//Jail
+11	5	//St Charles Place
+12	26	//Electric Company
+13	6	//States Ave
+14	7	//Virginia Ave
+15	23	//Pennsylvania RR
+16	8	//St James Place
+17	29	//Community Chest
+18	9	//Tennessee Ave
+19	10	//New York Ave
+20	32	//Free Parking
+21	11	//Kentucky Ave
+22	28	//Chance
+23	12	//Indiana Ave
+24	13	//Illinois Ave
+25	24	//B & O RR
+26	14	//Atlantic Ave
+27	15	//Ventnor Ave
+28	27	//Water Works
+29	16	//Marvin Gardens
+30	33	//Go to Jail
+31	17	//Pacific Ave
+32	18	//North Carolina Ave
+33	29	//Community Chest
+34	19	//Pennsylvania Ave
+35	25	//Short Line
+36	28	//Chance
+37	20	//Park Place
+38	35	//Luxury Tax
+39	21	//Boardwalk
