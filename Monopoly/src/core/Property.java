@@ -87,7 +87,7 @@ public class Property {
 			if (monopoly && houses == 0 && hotels == 0) rent *= 2;
 		}
 		else if (railroad) {
-			rent = 
+			rent = //FIX
 		
 		income = rent * (Board.playerQuantity - 1) * tile.probability;
 	}
