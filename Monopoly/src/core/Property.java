@@ -82,7 +82,13 @@ public class Property {
 		int houses = this.houses;
 		if (hotels > 0) houses++;
 
-		rent = rentPresets[houses];
+		if (!railroad && !utility) {
+			rent = rentPresets[houses];
+			if (monopoly && houses == 0 && hotels == 0) rent *= 2;
+		}
+		else if (railroad) {
+			rent = 
+		
 		income = rent * (Board.playerQuantity - 1) * tile.probability;
 	}
 	public int getRent(int roll) {
