@@ -105,6 +105,11 @@ public class Board {
 		int[] monopoly = Board.getMonopoly(selectedProperty);
 		for (int p = 0; p < monopoly.length; p++)
 			property[monopoly[p]].value[rank.get(rank.size() - 1)] *= 1.25;
+		if (checkMonopoly(monopoly))
+			for (int p = 0; p < monopoly.length; p++){
+				property[monopoly[p]].monopoly = true;
+				property[monopoly[p]].value[rank.get(rank.size() - 1)] *= 1.5;
+			}
 	}
 	public static int[] getMonopoly(Property propertySelected){ 
 		//uses Board list of monopolies (all monopolies) instead of player-owned monopolies
@@ -117,6 +122,18 @@ public class Board {
 		for (int p = 0; p < monopolyList.size(); p++) monopoly[p] = monopolyList.get(p);
 
 		return monopoly;
+	}
+	public static boolean checkMonopoly(int[] monopoly) {
+		boolean monopolyFormed = true;
+		int playerNumber = property[monopoly[0]].owner;
+
+		for (int p = 1; p < monopoly.length; p++)
+			if (property[monopoly[p]].owner != playerNumber) {
+				monopolyFormed = false;
+				break;
+			}
+
+		return monopolyFormed;
 	}
 
 	//RNG methods
