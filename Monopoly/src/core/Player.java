@@ -5,6 +5,7 @@ import java.util.*;
 public class Player {
 
 	public int position = 0; //gives the position of a player on the board
+	public int totalRoll; // used for determining rent from utilities
 	public int playerNumber; //player number, which determines order
 	public boolean inJail = false;
 	public int jailTime;
@@ -67,6 +68,7 @@ public class Player {
 
 				roll1 = Board.rollDie();
 				roll2 = Board.rollDie();
+				totalRoll = roll1 + roll2;
 
 				if (roll1 == roll2) { //checks for doubles
 					speeding++;
@@ -79,7 +81,7 @@ public class Player {
 
 				if (inJail) break; //checks for case in which player was speeding
 
-				position += roll1 + roll2;
+				position += totalRoll;
 				if (position >= 40) {
 					position -= 40;
 					exchangeMoney(200); //collect $200
@@ -418,7 +420,7 @@ public class Player {
 						for (int p = 0; p < monopoly.length; p++){
 							Board.property[monopoly[p]].monopoly = true;
 							Board.property[monopoly[p]].value[rank.get(rank.size() - 1)] *= 1.5;
-						}
+						} //FIX
 				}
 		}
 		else Board.auction(property);
@@ -434,11 +436,12 @@ public class Player {
 		return 0;
 	}
 	public void payRent(Property property) {
-		if (trueWealth < property.rent)
+		int rent = property.getRent(totalRoll);
+		if (trueWealth < rent)
 			Board.player[property.owner].exchangeMoney(trueWealth);
-		else Board.player[property.owner].exchangeMoney(property.rent);
+		else Board.player[property.owner].exchangeMoney(property);
 
-		exchangeMoney(-1 * property.rent);
+		exchangeMoney(-1 * rent);
 	}
 
 	public int assessRisk() {
