@@ -1,0 +1,41 @@
+Tile No.	Associated Type	Probabilities	
+0	30	0.19277287	//Go (special probability, counts every time Go is passed instead of only when landed on)
+1	0	0.019674244	//Mediterranean Ave
+2	29	0.019884078	//Community Chest
+3	1	0.019959508	//Baltic Ave
+4	34	0.021497782	//Income Tax
+5	22	0.027372609	//Reading RR
+6	2	0.02088067	//Oriental Ave
+7	28	0.021295009	//Chance
+8	3	0.021420794	//Vermont
+9	4	0.02121448	//Connecticut
+10	31	0.057579356	//Jail
+11	5	0.024922348	//St Charles Place
+12	26	0.025437572	//Electric Company
+13	6	0.021327842	//States Ave
+14	7	0.023615777	//Virginia Ave
+15	23	0.025937396	//Pennsylvania RR
+16	8	0.026161768	//St James Place
+17	29	0.025842017	//Community Chest
+18	9	0.027546568	//Tennessee Ave
+19	10	0.027508554	//New York Ave
+20	32	0.027535943	//Free Parking
+21	11	0.02562175	//Kentucky Ave
+22	28	0.027109951	//Chance
+23	12	0.025093365	//Indiana Ave
+24	13	0.029247075	//Illinois Ave
+25	24	0.028131299	//B & O RR
+26	14	0.024897279	//Atlantic Ave
+27	15	0.024709188	//Ventnor Ave
+28	27	0.025953006	//Water Works
+29	16	0.023977617	//Marvin Gardens
+30	33	0.024425524	//Go to Jail
+31	17	0.024777338	//Pacific Ave
+32	18	0.024278352	//North Carolina Ave
+33	29	0.02496994	//Community Chest
+34	19	0.023090376	//Pennsylvania Ave
+35	25	0.022442011	//Short Line
+36	28	0.021351361	//Chance
+37	20	0.020205287	//Park Place
+38	35	0.020147862	//Luxury Tax
+39	21	0.024263049	//Boardwalk
