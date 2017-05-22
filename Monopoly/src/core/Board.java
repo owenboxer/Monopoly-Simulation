@@ -123,6 +123,18 @@ public class Board {
 
 		return monopoly;
 	}
+	public static int[] getMonopoly(int color){ //FIX
+		//uses Board list of monopolies (all monopolies) instead of player-owned monopolies
+		ArrayList<Integer> monopolyList = new ArrayList<Integer>();
+
+		for (int p = 0; p < 28; p++)
+			if (propertySelected.color == property[p].color) monopolyList.add(p);
+
+		int[] monopoly = new int[monopolyList.size()];
+		for (int p = 0; p < monopolyList.size(); p++) monopoly[p] = monopolyList.get(p);
+
+		return monopoly;
+	}
 	public static boolean checkMonopoly(int[] monopoly) {
 		boolean monopolyFormed = true;
 		int playerNumber = property[monopoly[0]].owner;
