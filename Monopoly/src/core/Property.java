@@ -78,11 +78,18 @@ public class Property {
 	public void establishValue(){
 		value = new double[Board.playerQuantity];
 	}
-	public void setRent(){
+	public void setRent() {
 		int houses = this.houses;
 		if (hotels > 0) houses++;
 
 		rent = rentPresets[houses];
 		income = rent * (Board.playerQuantity - 1) * tile.probability;
+	}
+	public int getRent(int roll) {
+		if (!utility) return rent;
+
+		else if (monopoly) rent = roll * 10;
+		else rent = roll * 4;
+		return rent;
 	}
 }
