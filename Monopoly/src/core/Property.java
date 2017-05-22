@@ -5,7 +5,7 @@ public class Property {
 	public String name;
 	public int cost, mortgageValue; //mortgageValue is 0.5 * cost
 	public int rentPresets[] = new int[6], houses = 0, hotels = 0, houseCost; //rent[0]: default rent, rent[n]: n houses, rent[5]: 1 hotel
-	public int rent
+	public int rent;
 	public double income;
 	public int owner = -1; //a value of -1 signifies being unowned, while any other value will correspond to a player
 	public int color; //color refers to the monopoly which the property is in
