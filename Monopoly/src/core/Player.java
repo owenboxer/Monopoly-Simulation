@@ -40,6 +40,9 @@ public class Player {
 		risk = assessRisk(); //many actions that may (and most often do) occur during a turn require assessing risk
 		value = assessValue(); // 										" 									   value
 		move();
+
+		//Try to buy houses
+		
 	}
 
 	public void move(){ //tell player to move by rolling dice (i.e. a normal move)
@@ -321,8 +324,46 @@ public class Player {
 
 		return developed;
 	}
-	public int[] decisionBuyHouses(){
-		
+	public int[] decisionBuyHouses(int propertySelected){
+		int monopoly = getMonopoly(propertySelected), priority = getHousePriority(monopoly, true);
+		int availableMoney = money;
+		if ((0.5 * value) + risk > availibleMoney) availableMoney = (0.5 * value) + risk;
+
+		int[] houses, buy;
+		int totalHouses = 0, totalHotels = 0;
+		int houseCost = property.get(propertySelected).houseCost;
+		int p = 0
+
+		for (p = 0; p < monopoly.length; p++) {
+			houses[p] = property.get(monopoly[p]).houses;
+			if (property.get(monopoly[p]).hotels > 0) houses[p] = 5;
+		}
+
+		p = 0;
+		while (totalHouses < bankHouses  - 1 && totalHotels < bankHotels - 1) {
+			houses[priority[p % 3]]++;
+			if ((totalHouses * houseCost) + (totalHotels * houseCost) > availableMoney) {
+				houses[priority[p % 3]]--;
+				break;
+			}
+			if (houses[priority[p % 3]] == 5) {
+				totalHouses -= 4;
+				totalHotels++;
+				continue;
+			}
+			else if (houses[priority[p % 3]] > 5) {
+				houses[priority[p % 3]]--;
+				break;
+			}
+			totalHouses++;
+			p++;
+		}
+
+		for (p = 0; p < monopoly.length; p++) {
+			if (property.get(monopoly[p]).hotels > 0) buy[p] = 0;
+			else buy[p] = houses[p] - property.get(monopoly[p]).houses;
+		}
+		return buy;
 	}
 	public int[] getHousePriority(int[] monopoly, boolean buying){
 		/* Determines in which order houses should be bought/sold on properties based on the number of houses on those properties and the
@@ -372,6 +413,12 @@ public class Player {
 					monopoly = Board.getMonopoly(property);
 					for (int p = 0; p < monopoly.length; p++)
 						Board.property[monopoly[p]].value[playerNumber] *= 1.25;
+					Board.checkMonopoly(monopoly);
+					if (Board.checkMonopoly(monopoly))
+						for (int p = 0; p < monopoly.length; p++){
+							Board.property[monopoly[p]].monopoly = true;
+							Board.property[monopoly[p]].value[rank.get(rank.size() - 1)] *= 1.5;
+						}
 				}
 		}
 		else Board.auction(property);
